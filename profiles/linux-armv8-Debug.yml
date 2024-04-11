@@ -1,0 +1,4 @@
+include(Common/linux-armv8.yml)
+
+[settings]
+build_type=Debug

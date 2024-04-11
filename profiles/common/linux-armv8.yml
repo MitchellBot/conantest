@@ -1,0 +1,10 @@
+[settings]
+os=Linux
+arch=armv8
+compiler=gcc
+compiler.cppstd=gnu14
+compiler.libcxx=libstdc++11
+compiler.version=13
+
+[tool_requires]
+armtoolchain/13.2

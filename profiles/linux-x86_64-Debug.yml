@@ -1,0 +1,4 @@
+include(Common/linux-x86_64.yml)
+
+[settings]
+build_type=Debug
