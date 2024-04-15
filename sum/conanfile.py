@@ -35,6 +35,7 @@ class ConsumerRecipe(ConanFile):
 
     def package(self):
         copy(self, "*.h", self.source_folder, self.package_folder)
+        copy(self, "*.a", self.source_folder, self.package_folder)
 
     def package_info(self):
         self.cpp_info.libs = ["sum"]
