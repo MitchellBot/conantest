@@ -118,6 +118,10 @@ class StandardPackage:
         if not self.name:
             raise ConanException("You must define the `name` for this package.")
 
+        # TODO: remove these and only extend one of the other classes
+        self.version = LibraryVersions[self.name].Version
+        self.name = LibraryVersions[self.name].Name
+
     def export_sources(self):
         if self.package_type == "header-library":
             copy(self, "*.h", self.recipe_folder, self.export_sources_folder)
