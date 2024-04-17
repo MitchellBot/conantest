@@ -102,13 +102,15 @@ class StandardPackage:
     default_options = {"shared": True, "fPIC": True}
 
     def requirements(self):
-        if hasattr(self, 'dependencies') and self.dependencies:
-            for dependency in self.dependencies:
-                self.requires(get_dependency_full(self, LibraryVersions, ThirdPartyVersions, dependency))
+        self.requires('boost/1.79.0')
+        self.test_requires('gtest/1.12.1')
+        # if hasattr(self, 'dependencies') and self.dependencies:
+        #     for dependency in self.dependencies:
+        #         self.requires(get_dependency_full(self, LibraryVersions, ThirdPartyVersions, dependency))
 
-        if hasattr(self, 'test_dependencies') and self.test_dependencies:
-            for dependency in self.test_dependencies:
-                self.test_requires(get_dependency_full(self, LibraryVersions, ThirdPartyVersions, dependency))
+        # if hasattr(self, 'test_dependencies') and self.test_dependencies:
+        #     for dependency in self.test_dependencies:
+        #         self.test_requires(get_dependency_full(self, LibraryVersions, ThirdPartyVersions, dependency))
 
     def init(self):
         if not self.package_type or self.package_type == "unknown":
